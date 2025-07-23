@@ -14,7 +14,7 @@ const projects = [
         id: 1,
         title: "DocuMentor",
         description: "A full stack RAG app that allows users to sign up, upload documents, and interact with them through an AI-powered chat interface.",
-        tags: ["React", "Node.js", "Langchain", "MongoDB","Express","OpenAI","Vercel","Supabase","Artificial Intelligence"],
+        tags: ["React", "Node.js", "Web2.0","Langchain", "MongoDB","Express","OpenAI","Vercel","Supabase","Artificial Intelligence"],
         image: "/docu.png",
         github: "#",
         live: "https://docu-mentor-murex.vercel.app/"
@@ -41,7 +41,7 @@ const projects = [
         id: 4,
         title: "MyStartup",
         description: "A platform for developers to pitch startup ideas and connect with potential investors.",
-        tags: ["Nextjs", "SanityCMS", "TailwindCSS", "NextAuth","Typescript"],
+        tags: ["Nextjs", "SanityCMS", "TailwindCSS", "Web2.0","NextAuth","Typescript"],
         image: "/pitch.png",
         github: "#",  
         live: "https://hic-pitch-mju5.vercel.app/"

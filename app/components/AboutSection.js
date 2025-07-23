@@ -52,7 +52,7 @@ export default function AboutSection({ id }) {
                 <button 
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/inametis.pdf';
+                    link.href = '/InametiHenshaw.pdf';
                     link.download = 'Inameti_CV.pdf';
                     document.body.appendChild(link);
                     link.click();
