@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 export default function ContactSection({ id }) {
   const [formData, setFormData] = useState({
@@ -8,7 +9,7 @@ export default function ContactSection({ id }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-
+  const formRef = useRef(null);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -20,14 +21,21 @@ export default function ContactSection({ id }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    // if(!formRef.current) return;
+    emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    ).then(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
+    }).catch((error) => {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -44,12 +52,17 @@ export default function ContactSection({ id }) {
         </div>
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {submitStatus === 'success' && (
-                <div className="bg-green-900 bg-opacity-50 border border-green-400 text-green-300 px-4 py-3 rounded mb-4">
-                  Thank you for your message! I'll get back to you soon.
-                </div>
-              )}
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {submitStatus === 'success' && (
+                  <div className="bg-green-900 bg-opacity-50 border border-green-400 text-green-300 px-4 py-3 rounded mb-4">
+                    Thank you for your message! I'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-900 bg-opacity-50 border border-red-400 text-red-300 px-4 py-3 rounded mb-4">
+                    Oops! Something went wrong. Please try again later.
+                  </div>
+                )}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Your Name
