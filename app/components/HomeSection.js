@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function HomeSection({ id, scrollToSection }) {
   const [typedText, setTypedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const texts = ["Full Stack Developer", "AI Enthusiast", "Blockchain Developer", "Product Manager"];
+  const texts = ["Full Stack Developer", "AI Enthusiast", "Product Manager"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   useEffect(() => {
