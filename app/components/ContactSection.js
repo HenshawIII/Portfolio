@@ -169,9 +169,9 @@ export default function ContactSection({ id }) {
               <div className="mt-12">
                 <h4 className="text-sm font-medium text-gray-400 mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/henshawiii" className="bg-gray-700 hover:bg-gray-600 p-4 rounded-xl text-white transition-colors">
+                  {/* <a href="https://github.com/henshawiii" className="bg-gray-700 hover:bg-gray-600 p-4 rounded-xl text-white transition-colors">
                     <i className="fab fa-github text-xl"></i>
-                  </a>
+                  </a> */}
                   <a href="https://x.com/devansa01" className="bg-gray-700 hover:bg-gray-600 p-4 rounded-xl text-white transition-colors">
                     <i className="fab fa-twitter text-xl"></i>
                   </a>

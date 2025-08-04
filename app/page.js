@@ -224,9 +224,9 @@ export default function Home() {
               <p className="text-gray-400 mt-2">Building the future, one line of code at a time</p>
             </div>
             <div className="flex space-x-6">
-              <a href="https://github.com/henshawiii" className="text-gray-400 hover:text-blue-400 transition-colors text-xl">
+              {/* <a href="https://github.com/henshawiii" className="text-gray-400 hover:text-blue-400 transition-colors text-xl">
                 <i className="fab fa-github"></i>
-              </a>
+              </a> */}
               <a href="https://x.com/devansa01" className="text-gray-400 hover:text-blue-400 transition-colors text-xl">
                 <i className="fab fa-twitter"></i>
               </a>
