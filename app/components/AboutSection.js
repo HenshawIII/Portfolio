@@ -52,8 +52,8 @@ export default function AboutSection({ id }) {
                 <button 
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/InametiHenshaw.pdf';
-                    link.download = 'Inameti_CV.pdf';
+                    link.href = '/HenshawCV.pdf';
+                    link.download = 'Henshaw_CV.pdf';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
