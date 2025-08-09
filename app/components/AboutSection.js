@@ -48,7 +48,7 @@ export default function AboutSection({ id }) {
               <p className="text-gray-300 text-center mb-6">
                 Passionate about creating elegant solutions to complex problems through code.
               </p>
-              <div className="flex justify-center space-x-4">
+              {/* <div className="flex justify-center space-x-4">
                 <button 
                   onClick={() => {
                     const link = document.createElement('a');
@@ -62,7 +62,7 @@ export default function AboutSection({ id }) {
                 >
                   Download CV
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="lg:w-2/3">
